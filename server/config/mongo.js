@@ -3,12 +3,10 @@ import dotenv from "dotenv";
 
 dotenv.config();
 
-const MONGO_URI = process.env.MONGO_URI;
+const MONGO_URI =
+  "mongodb+srv://Riddhiman_Mongo:hello123@cluster1.b76yf.mongodb.net/ChatApp?retryWrites=true&w=majority";
 
-mongoose.connect(MONGO_URI, {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-});
+mongoose.connect(MONGO_URI);
 
 mongoose.connection.on("connected", () => {
   console.log("Mongo has connected succesfully");
